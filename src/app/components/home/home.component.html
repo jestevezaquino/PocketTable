@@ -1,15 +1,14 @@
-<div id="barra-navegacion" class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 barra-nav">
+<div id="barra-navegacion" class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 fixed-top barra-nav">
     <h5 class="my-0 mr-md-auto font-weight-normal text-warning">Pocket-Table</h5>
     <nav class="my-2 my-md-0 mr-md-3">
-        <a class="p-2 text-white" href="#">Home</a>
-        <a class="p-2 text-white" href="#">Nosotros</a>
-        <a class="p-2 text-white" href="#">Servicios</a>
-        <a class="p-2 text-white" href="#">Contactanos</a>
+        <a class="btn p-2 text-white" (click)="navigateToHome()">Inicio</a>
+        <a class="btn p-2 text-white" (click)="navigateToNosotros()">Nosotros</a>
+        <a class="btn p-2 text-white" (click)="navigateToServicios()">Servicios</a>
     </nav>
-    <a class="btn bg-primary text-white">Unete a PT!</a>
+    <a class="btn bg-primary text-white">Registro/Login</a>
 </div>
 
-<div id="wallpaper-home" class="row img-properties m-0">
+<div id="home" class="row mx-0 img-properties">
     <div class="col-md-4"></div>
     <div class="col-md-4"></div>
     <div class="col-md-4 d-flex flex-column">
@@ -17,9 +16,36 @@
             <div class="card-design-inside m-md-2">
                 <h5 class="font-weight-bold d-flex justify-content-center text-justify">
                     Pocket-Table te ofrece un amplio catálogo de restaurantes ubicados en distintas ciudades de EEUU,
-                    con informaciones veridicas de los mismos y rating en base a los clientes que los frecuentan. 
+                    con informaciones verídicas de los mismos y rating en base a los clientes que los han frecuentado. 
                 </h5>
             </div>
         </div>
     </div>
+</div>
+
+<div id="nosotros" class="row mx-0 nosotros-properties">
+    <div class="col-md-12 d-flex flex-row flex-column">
+        <div class="card mx-auto my-auto bg-transparent border border-warning">
+            <div class="card-header card-cabecera d-flex justify-content-center">
+                <h4 class="text-white-50">Acerca de Pocket-Table</h4>
+            </div>
+            <div class="card-body text-justify">
+                <h6 class="text-white-50"><span class="text-warning">Pocket-Table</span> sit amet, consectetur adipiscing elit. Morbi rhoncus velit mauris, vel fermentum urna euismod quis. 
+                    Nam porta augue cursus, auctor est quis, blandit lectus. Etiam maximus, magna at placerat pretium, turpis est suscipit massa, sit amet maximus metus nibh nec nulla. Fusce eu mi enim. 
+                    Nam imperdiet sapien nec tempus imperdiet. Nunc lobortis mauris convallis mauris luctus, sed convallis erat rutrum. Fusce facilisis enim commodo ligula condimentum accumsan. 
+                </h6>
+                <h6 class="text-white-50">
+                    Vestibulum vel neque et quam hendrerit porttitor. Sed ultrices, velit nec sodales volutpat, erat urna tincidunt tortor, consequat vehicula erat odio vitae justo. 
+                    Phasellus eleifend fringilla sagittis. Praesent eget posuere elit. Donec auctor nisl at massa laoreet commodo. Aenean finibus pellentesque eros. 
+                    Nunc fringilla tortor gravida tempus tincidunt. Curabitur dictum ex nec sem vulputate, sed consequat ante bibendum.
+                </h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="servicios" class="row mx-0 servicios-properties">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
 </div>
