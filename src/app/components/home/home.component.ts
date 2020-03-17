@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService } from 'src/app/services/general.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 
 export class HomeComponent implements OnInit {
@@ -15,9 +17,18 @@ export class HomeComponent implements OnInit {
   AlturaNav:any;
   AlturaCon:any;
 
-  constructor() { }
+  muestras:any = [];
 
-  ngOnInit(): void {
+  constructor(private router:Router,private serv:GeneralService) {}
+
+  ngOnInit() {
+
+    this.serv.muestraOT().subscribe((data:any)=>{
+      this.muestras.push(data.restaurants[1]);
+      this.muestras.push(data.restaurants[2]);
+      this.muestras.push(data.restaurants[3]);
+    });
+
     this.AlturaCon = screen.height;
     this.navItem = document.getElementById("barra-navegacion");
     this.AlturaNav = this.navItem.clientHeight;
@@ -28,8 +39,8 @@ export class HomeComponent implements OnInit {
 
   ngAfterViewInit(){
     this.contenedorP.style.height = ""+(this.AlturaCon - this.AlturaNav)+"px";
-    this.contenedorN.style.height = ""+(this.AlturaCon - this.AlturaNav)+"px";
-    this.contenedorS.style.height = ""+(this.AlturaCon - this.AlturaNav*2)+"px";
+    this.contenedorN.style.height = ""+(this.AlturaCon - this.AlturaNav*2)+"px";
+    this.contenedorS.style.height = ""+(this.AlturaCon - this.AlturaNav)+"px";
   }
 
   navigateToHome(){
@@ -57,5 +68,9 @@ export class HomeComponent implements OnInit {
       behavior: 'smooth', 
       inline: 'start'
     });
+  }
+
+  navigateToAcceso(){
+    this.router.navigate(["/Acceso"]);
   }
 }

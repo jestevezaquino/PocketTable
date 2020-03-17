@@ -2,10 +2,10 @@
     <h5 class="my-0 mr-md-auto font-weight-normal text-warning">Pocket-Table</h5>
     <nav class="my-2 my-md-0 mr-md-3">
         <a class="btn p-2 text-white" (click)="navigateToHome()">Inicio</a>
-        <a class="btn p-2 text-white" (click)="navigateToNosotros()">Nosotros</a>
         <a class="btn p-2 text-white" (click)="navigateToServicios()">Servicios</a>
+        <a class="btn p-2 text-white" (click)="navigateToNosotros()">Nosotros</a>
     </nav>
-    <a class="btn bg-primary text-white">Registro/Login</a>
+    <a class="btn bg-primary text-white" (click)="navigateToAcceso()">Registro/Login</a>
 </div>
 
 <div id="home" class="row mx-0 img-properties">
@@ -23,18 +23,64 @@
     </div>
 </div>
 
-<div id="nosotros" class="row mx-0 nosotros-properties">
+<div id="servicios" class="row mx-0 nosotros-properties">
+    <div class="col-md-12 d-flex flex-row">
+        <div *ngFor="let m of muestras" class="card mx-auto my-auto bg-transparent border border-dark">
+            <div class="card-header card-cabecera d-flex justify-content-center">
+               <h3 class="text-white"> {{m.name}}</h3>
+            </div>
+            <div class="card-body">
+                <div class="d-flex justify-content-center">
+                    <img src="{{m.image_url}}" />
+                </div><br/>
+                <div class="border border-black rounded bg-dark px-md-2 py-md-2">
+                    <span class="text-white"><b>Nombre:</b></span><span class="text-white"> {{m.name}}</span><br/>
+                    <span class="text-white"><b>Dirección:</b></span><span class="text-white"> {{m.address}}</span><br/>
+                    <span class="text-white"><b>Telefono:</b></span><span class="text-white"> {{m.phone}}</span><br/>
+                    <span class="text-white"><b>Estado:</b></span><span class="text-white"> {{m.state}}</span><br/>
+                    <span class="text-white"><b>Ciudad:</b></span><span class="text-white"> {{m.city}}</span><br/>
+                    <div [ngSwitch]="m.price">
+                        <div *ngSwitchCase="1">
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                        </div>
+                        <div *ngSwitchCase="2">
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                        </div>
+                        <div *ngSwitchCase="3">
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                        </div>
+                        <div *ngSwitchCase="4">
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="nosotros" class="row mx-0 servicios-properties">
     <div class="col-md-12 d-flex flex-row flex-column">
-        <div class="card mx-auto my-auto bg-transparent border border-warning">
+        <div class="card mx-auto my-md-auto border border-warning">
             <div class="card-header card-cabecera d-flex justify-content-center">
                 <h4 class="text-white-50">Acerca de Pocket-Table</h4>
             </div>
             <div class="card-body text-justify">
-                <h6 class="text-white-50"><span class="text-warning">Pocket-Table</span> sit amet, consectetur adipiscing elit. Morbi rhoncus velit mauris, vel fermentum urna euismod quis. 
+                <h6 class="text-dark"><span class="text-warning">Pocket-Table</span> sit amet, consectetur adipiscing elit. Morbi rhoncus velit mauris, vel fermentum urna euismod quis. 
                     Nam porta augue cursus, auctor est quis, blandit lectus. Etiam maximus, magna at placerat pretium, turpis est suscipit massa, sit amet maximus metus nibh nec nulla. Fusce eu mi enim. 
                     Nam imperdiet sapien nec tempus imperdiet. Nunc lobortis mauris convallis mauris luctus, sed convallis erat rutrum. Fusce facilisis enim commodo ligula condimentum accumsan. 
                 </h6>
-                <h6 class="text-white-50">
+                <h6 class="text-dark">
                     Vestibulum vel neque et quam hendrerit porttitor. Sed ultrices, velit nec sodales volutpat, erat urna tincidunt tortor, consequat vehicula erat odio vitae justo. 
                     Phasellus eleifend fringilla sagittis. Praesent eget posuere elit. Donec auctor nisl at massa laoreet commodo. Aenean finibus pellentesque eros. 
                     Nunc fringilla tortor gravida tempus tincidunt. Curabitur dictum ex nec sem vulputate, sed consequat ante bibendum.
@@ -42,10 +88,4 @@
             </div>
         </div>
     </div>
-</div>
-
-<div id="servicios" class="row mx-0 servicios-properties">
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
 </div>
