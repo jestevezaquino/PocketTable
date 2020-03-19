@@ -4,14 +4,15 @@
 
 export const environment = {
   production: false,
-  firebaseConfig : {
-    apiKey: "AIzaSyD8NXnVe-kv2HbACE7TjNU8NK4VDDW1GE4",
-    authDomain: "pockettable-a672e.firebaseapp.com",
-    databaseURL: "https://pockettable-a672e.firebaseio.com",
-    projectId: "pockettable-a672e",
-    storageBucket: "pockettable-a672e.appspot.com",
-    messagingSenderId: "271396738866",
-    appId: "1:271396738866:web:ed9c098a9050cb9b67e92b"
+  firebase : {
+    apiKey: "AIzaSyD5gulJsJomCI2bgx8KBdSGhMcM1tBpXUI",
+    authDomain: "pockettable-8a785.firebaseapp.com",
+    databaseURL: "https://pockettable-8a785.firebaseio.com",
+    projectId: "pockettable-8a785",
+    storageBucket: "pockettable-8a785.appspot.com",
+    messagingSenderId: "41429135145",
+    appId: "1:41429135145:web:a10db9b7f6d754b7d8d138",
+    measurementId: "G-3WDWZN96V4"
   }
 };
 

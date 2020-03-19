@@ -18,7 +18,7 @@ export class ReservarComponent implements OnInit {
   ngOnInit(): void {}
 
   ReservarRestaurante(restID, restObject, index){
-    this.rltDatabase.database.ref("reservations/"+this.userAuth.auth.currentUser.uid+"/"+restID).set(restObject);
+    this.rltDatabase.database.ref("PocketTable/reservations/"+this.userAuth.auth.currentUser.uid+"/"+restID).set(restObject);
     this.buttonState[index] = 1;
     alert("Ha reservado el restaurante correctamente.");
   }

@@ -19,11 +19,10 @@ export class DetallesComponent implements OnInit {
   ngOnInit(): void {
     this.userName = this.userAuth.auth.currentUser.displayName;
     this.rest = this.service.getRestaurant();
-    console.log(this.rest);
   }
 
   Eliminar(){
-    this.db.database.ref("reservations/"+this.userAuth.auth.currentUser.uid+"/"+this.rest.id).remove();
+    this.db.database.ref("PocketTable/reservations/"+this.userAuth.auth.currentUser.uid+"/"+this.rest.id).remove();
     alert("Se ha removido este restaurante de tus reservaciones!");
     this.Regresar();
   }

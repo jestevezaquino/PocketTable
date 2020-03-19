@@ -18,30 +18,29 @@ export class RegistroComponent implements OnInit {
 
   ngOnInit(): void {
     this.Formulario = this.fb.group({
-      userName: ["",[Validators.required]],
+      CompleteName: ["",[Validators.required]],
       userEmail: ["",[Validators.required, Validators.email]],
       userPass: ["",[Validators.required, Validators.minLength(8), Validators.maxLength(16)]],
     })
   }
 
   async registrarUsuario(){
-    const username = this.Formulario.controls.userName.value;
-    const email = this.Formulario.controls.userEmail.value;
-    const password = this.Formulario.controls.userPass.value;
+    const userName = this.Formulario.value.CompleteName;
+    const email = this.Formulario.value.userEmail;
+    const password = this.Formulario.value.userPass;
 
     await this.userAuth.auth.createUserWithEmailAndPassword(email,password)
     .then(()=>{
-      this.userAuth.auth.onAuthStateChanged((userData)=>{
-        userData.updateProfile({
-          displayName: username,
-        });
+      
+      this.userAuth.auth.currentUser.updateProfile({
+        displayName: userName,
       });
 
       const userID = this.userAuth.auth.currentUser.uid;
 
       this.rltDatabase.database.ref("PocketTable/users/"+userID).set({
         ID: userID, 
-        Username: username,
+        Username: userName,
         Email: email 
       })
 

@@ -17,7 +17,7 @@ export class ReservacionesComponent implements OnInit {
   constructor(private service:GeneralService, private router:Router, private rltDb:AngularFireDatabase, private userAuth:AngularFireAuth) { }
 
   ngOnInit(): void {
-    this.itemRef = this.rltDb.object("reservations/"+this.userAuth.auth.currentUser.uid);
+    this.itemRef = this.rltDb.object("PocketTable/reservations/"+this.userAuth.auth.currentUser.uid);
     this.itemRef.snapshotChanges().subscribe(data=>{
       let iteradores = data.payload.val();
       
