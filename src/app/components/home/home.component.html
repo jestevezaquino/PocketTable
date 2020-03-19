@@ -24,8 +24,8 @@
 </div>
 
 <div id="servicios" class="row mx-0 nosotros-properties">
-    <div class="col-md-12 d-flex flex-row">
-        <div *ngFor="let m of muestras" class="card mx-auto my-auto bg-transparent border border-dark">
+    <div *ngFor="let m of muestras" class="col-md-4 d-flex flex-row">
+        <div class="card mx-auto my-auto bg-transparent border border-dark">
             <div class="card-header card-cabecera d-flex justify-content-center">
                <h3 class="text-white"> {{m.name}}</h3>
             </div>
@@ -39,29 +39,29 @@
                     <span class="text-white"><b>Telefono:</b></span><span class="text-white"> {{m.phone}}</span><br/>
                     <span class="text-white"><b>Estado:</b></span><span class="text-white"> {{m.state}}</span><br/>
                     <span class="text-white"><b>Ciudad:</b></span><span class="text-white"> {{m.city}}</span><br/>
-                    <div [ngSwitch]="m.price">
-                        <div *ngSwitchCase="1">
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                        </div>
-                        <div *ngSwitchCase="2">
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                        </div>
-                        <div *ngSwitchCase="3">
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                        </div>
-                        <div *ngSwitchCase="4">
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                            <img src="../../../assets/img/estrella.png" with="50" height="50"/>
-                        </div>
+                </div>
+                <div class="d-flex justify-content-center pt-md-1" [ngSwitch]="m.price">
+                    <div *ngSwitchCase="1">
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
+                    </div>
+                    <div *ngSwitchCase="2">
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
+                    </div>
+                    <div *ngSwitchCase="3">
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
+                    </div>
+                    <div *ngSwitchCase="4">
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
+                        <img src="../../../../../assets/img/estrella.png" with="50" height="50"/>
                     </div>
                 </div>
             </div>

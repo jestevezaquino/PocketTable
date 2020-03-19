@@ -10,12 +10,9 @@ import { Router } from '@angular/router';
 
 export class HomeComponent implements OnInit {
 
-  navItem:any;
   contenedorP:any;
   contenedorN:any;
   contenedorS:any;
-  AlturaNav:any;
-  AlturaCon:any;
 
   muestras:any = [];
 
@@ -24,23 +21,26 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
 
     this.serv.muestraOT().subscribe((data:any)=>{
-      this.muestras.push(data.restaurants[1]);
-      this.muestras.push(data.restaurants[2]);
-      this.muestras.push(data.restaurants[3]);
+      this.muestras.push(data.restaurants[4]);
     });
 
-    this.AlturaCon = screen.height;
-    this.navItem = document.getElementById("barra-navegacion");
-    this.AlturaNav = this.navItem.clientHeight;
+    this.serv.muestraOT2().subscribe((data:any)=>{
+      this.muestras.push(data.restaurants[2]);
+    });
+
+    this.serv.muestraOT3().subscribe((data:any)=>{
+      this.muestras.push(data.restaurants[0]);
+    });
+
     this.contenedorP = document.getElementById("home");
     this.contenedorN = document.getElementById("nosotros");
     this.contenedorS = document.getElementById("servicios");
   }
 
   ngAfterViewInit(){
-    this.contenedorP.style.height = ""+(this.AlturaCon - this.AlturaNav)+"px";
-    this.contenedorN.style.height = ""+(this.AlturaCon - this.AlturaNav*2)+"px";
-    this.contenedorS.style.height = ""+(this.AlturaCon - this.AlturaNav)+"px";
+    this.contenedorP.style.height = "100vh";
+    this.contenedorN.style.height = "100vh";
+    this.contenedorS.style.height = "100vh";
   }
 
   navigateToHome(){

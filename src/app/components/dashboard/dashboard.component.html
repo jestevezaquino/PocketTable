@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-12 d-flex flex-column flex-md-row align-items-center p-3 px-md-4 menu-color">
+        <h5 class="my-0 mr-md-auto font-weight-normal text-white">Hola <span class="text-warning">{{userName}}</span></h5>
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="btn p-2 text-white" (click)="AbrirReservaciones()">Mis reservaciones</a>
+            <a class="btn p-2 text-white" (click)="AbrirReservar()">Reservar restaurante</a>
+        </nav>
+        <a class="btn bg-danger text-white" (click)="CerrarSesion()">Salir</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 px-0">
+        <app-reservaciones *ngIf="this.control==false;else reservar"></app-reservaciones>
+        <ng-template #reservar>
+            <app-reservar></app-reservar>
+        </ng-template>
+    </div>
+</div>
