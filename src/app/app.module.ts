@@ -11,6 +11,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirePerformanceModule } from '@angular/fire/performance';
 import { environment } from 'src/environments/environment.prod';
+import { AuthGuardService } from './services/auth-guard.service';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -24,9 +26,11 @@ import { environment } from 'src/environments/environment.prod';
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     AngularFireStorageModule,
-    AngularFirePerformanceModule
+    AngularFirePerformanceModule,
   ],
-  providers: [GeneralService],
+  providers: [
+    GeneralService, LoginService, AuthGuardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
